@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rush02.c                                           :+:      :+:    :+:   */
+/*   rush04.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bbazagli <bbazagli@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -14,16 +14,16 @@ void	ft_putchar(char c);
 
 void	position(int x, int y, int row, int col)
 {
-	if ((row == 1 && col == 1) || (row == 1 && col == x))
+	if ((row == y && col == x && y != 1 && x != 1) || (row == 1 && col == 1))
 	{
 		ft_putchar('A');
 	}
-	else if ((row == y && col == x) || (row == y && col == 1))
+	else if ((row == 1 && col == x) || (row == y && col == 1))
 	{
 		ft_putchar('C');
 	}
-	else if ((row == 1 && col < x) || (row == y && col < x) || (col == 1
-			&& row < y) || (col == x && row < y))
+	else if ((row == 1 && col < x) || (row == y && col < x) || (row < y
+			&& col == 1) || (row < y && col == x))
 	{
 		ft_putchar('B');
 	}
