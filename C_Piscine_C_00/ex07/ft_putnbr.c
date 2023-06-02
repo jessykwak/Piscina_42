@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 18:32:26 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/01 13:54:56 by jmin-kwa         ###   ########.fr       */
+/*   Created: 2023/06/02 14:39:59 by jmin-kwa          #+#    #+#             */
+/*   Updated: 2023/06/02 16:21:27 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,12 @@ void	ft_modulo(int num)
 	ft_putchar(res);
 }
 
-void	ft_print_comb2(void)
+void	recursive(int num)
+{
+	if (num > 0)
+}
+
+void	ft_putnbr(void)
 {
 	int	pri;
 	int	seg;
@@ -59,10 +64,3 @@ void	ft_print_comb2(void)
 		pri++;
 	}
 }
-/*
-int	main(void)
-{
-	ft_print_comb2();
-	return (0);
-}
-*/
