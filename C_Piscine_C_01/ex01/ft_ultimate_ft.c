@@ -1,33 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*   ft_ultimate_ft.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/31 12:02:05 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/06 10:46:35 by jmin-kwa         ###   ########.fr       */
+/*   Created: 2023/06/05 12:08:16 by jmin-kwa          #+#    #+#             */
+/*   Updated: 2023/06/06 12:44:17 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_is_negative(int n)
+void	ft_ultimate_ft(int *********nbr)
 {
-	if (n >= 0)
-	{
-		write(1, "P", 1);
-	}
-	else
-	{
-		write(1, "N", 1);
-	}
+	*********nbr = 42;
 }
-
 /*
 int	main(void)
 {
-	ft_is_negative();
+    int ********nbr8;
+    int *******nbr7;
+    int ******nbr6;
+    int *****nbr5;
+    int ****nbr4;
+    int ***nbr3;
+    int **nbr2;
+    int *nbr1;
+    int num;
+
+    nbr8 = &nbr7;
+    nbr7 = &nbr6;
+    nbr6 = &nbr5;
+    nbr5 = &nbr4;
+    nbr4 = &nbr3;
+    nbr3 = &nbr2;
+    nbr2 = &nbr1;
+    nbr1 = &num;
+    num = 2;
+
+	ft_ultimate_ft(&nbr8);
+	printf("%i", num);
 	return (0);
 }
 */

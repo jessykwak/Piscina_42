@@ -6,7 +6,7 @@
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 11:25:10 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/05/31 18:29:04 by jmin-kwa         ###   ########.fr       */
+/*   Updated: 2023/06/06 10:46:33 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,14 @@
 
 void	ft_print_numbers(void)
 {
-	int	numero;
+	int	num;
 
-	numero = '0';
-	while (numero <= '9')
+	num = '0';
+	while (num <= '9')
 	{
-		write(1, &numero, 1);
-		numero++;
+		write(1, &num, 1);
+		num++;
 	}
-	write(1, "\n", 1);
 }
 
 /*

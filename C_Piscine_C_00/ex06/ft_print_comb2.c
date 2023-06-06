@@ -6,7 +6,7 @@
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/31 18:32:26 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/01 13:54:56 by jmin-kwa         ###   ########.fr       */
+/*   Updated: 2023/06/06 10:46:38 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,48 +17,49 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	ft_divisoes(int num)
+void	ft_division(int num)
 {
-	int	res;
+	int	ans;
 
-	res = (num / 10) + '0';
-	ft_putchar(res);
+	ans = (num / 10) + '0';
+	ft_putchar(ans);
 }
 
 void	ft_modulo(int num)
 {
-	int	res;
+	int	ans;
 
-	res = (num % 10) + '0';
-	ft_putchar(res);
+	ans = (num % 10) + '0';
+	ft_putchar(ans);
 }
 
 void	ft_print_comb2(void)
 {
-	int	pri;
-	int	seg;
+	int	fir;
+	int	sec;
 
-	pri = 0;
-	while (pri < 99)
+	fir = 0;
+	while (fir < 99)
 	{
-		seg = pri + 1;
-		while (seg <= 99)
+		sec = fir + 1;
+		while (sec <= 99)
 		{
-			ft_divisoes(pri);
-			ft_modulo(pri);
+			ft_division(fir);
+			ft_modulo(fir);
 			ft_putchar(' ');
-			ft_divisoes(seg);
-			ft_modulo(seg);
-			seg++;
-			if (pri != 98)
+			ft_division(sec);
+			ft_modulo(sec);
+			sec++;
+			if (fir != 98)
 			{
 				ft_putchar(',');
 				ft_putchar(' ');
 			}
 		}
-		pri++;
+		fir++;
 	}
 }
+
 /*
 int	main(void)
 {

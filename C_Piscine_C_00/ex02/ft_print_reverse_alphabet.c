@@ -6,7 +6,7 @@
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/29 18:46:26 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/05/31 18:27:26 by jmin-kwa         ###   ########.fr       */
+/*   Updated: 2023/06/06 10:46:32 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ void	ft_print_reverse_alphabet(void)
 		write(1, &alphabet, 1);
 		alphabet--;
 	}
-	write(1, "\n", 1);
 }
 
 /*

@@ -1,47 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 14:39:59 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/06 10:46:57 by jmin-kwa         ###   ########.fr       */
+/*   Created: 2023/06/06 11:06:36 by jmin-kwa          #+#    #+#             */
+/*   Updated: 2023/06/06 12:44:11 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	write(1, &c, 1);
-}
-
-void	ft_putnbr(int nb)
-{
-	if (!(nb == -2147483648))
+	if (b != 0)
 	{
-		if (nb < 0)
-		{
-			ft_putchar('-');
-			nb = -1 * nb;
-			ft_putnbr(nb / 10);
-		}
-		else if (nb >= 10)
-		{
-			ft_putnbr(nb / 10);
-		}
-		ft_putchar((nb % 10) + '0');
+		*div = a / b;
+		*mod = a % b;
 	}
 	else
 	{
-		write(1, "-2147483648", 11);
+		*div = '\0';
+		*mod = '\0';
 	}
 }
-/*
-int	main()
+
+int main(void)
 {
-	ft_putnbr(-7085);
-	return (0);
+	int	a;
+	int	b;
+	int div;
+	int mod;
+
+	a = 3;
+	b = 0;
+	ft_div_mod(a, b, &div, &mod);
+	if (div == '\0' && mod == '\0')
+		printf("DIVISOR NAO PODE SER 0");
+	else
+	{
+		printf("%d dividido por %d = %d, resto %d", a, b, div, mod);
+	}
 }
-*/

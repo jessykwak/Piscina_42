@@ -1,47 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 14:39:59 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/06 10:46:57 by jmin-kwa         ###   ########.fr       */
+/*   Created: 2023/06/06 12:43:46 by jmin-kwa          #+#    #+#             */
+/*   Updated: 2023/06/06 17:30:59 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_putchar(char c)
+void	ft_putstr(char *str)
 {
-	write(1, &c, 1);
+	while (*str)
+	{
+		write(1, &*str, 1);
+		str++;
+	}
 }
 
-void	ft_putnbr(int nb)
+int	main(void)
 {
-	if (!(nb == -2147483648))
-	{
-		if (nb < 0)
-		{
-			ft_putchar('-');
-			nb = -1 * nb;
-			ft_putnbr(nb / 10);
-		}
-		else if (nb >= 10)
-		{
-			ft_putnbr(nb / 10);
-		}
-		ft_putchar((nb % 10) + '0');
-	}
-	else
-	{
-		write(1, "-2147483648", 11);
-	}
-}
-/*
-int	main()
-{
-	ft_putnbr(-7085);
+	ft_putstr("Can you see my brain open wide now?");
 	return (0);
 }
-*/

@@ -1,47 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/02 14:39:59 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/06 10:46:57 by jmin-kwa         ###   ########.fr       */
+/*   Created: 2023/06/06 10:52:10 by jmin-kwa          #+#    #+#             */
+/*   Updated: 2023/06/06 11:05:39 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <stdio.h>
 
-void	ft_putchar(char c)
+void	ft_swap(int *a, int *b)
 {
-	write(1, &c, 1);
+	int	aux;
+
+	aux = *b;
+	*b = *a;
+	*a = aux;
 }
 
-void	ft_putnbr(int nb)
+int	main(void)
 {
-	if (!(nb == -2147483648))
-	{
-		if (nb < 0)
-		{
-			ft_putchar('-');
-			nb = -1 * nb;
-			ft_putnbr(nb / 10);
-		}
-		else if (nb >= 10)
-		{
-			ft_putnbr(nb / 10);
-		}
-		ft_putchar((nb % 10) + '0');
-	}
-	else
-	{
-		write(1, "-2147483648", 11);
-	}
+	int	a;
+	int	b;
+
+	a = 4;
+	b = 7;
+	printf("antes: %d, %d", a, b);
+	printf("\n");
+	ft_swap(&a, &b);
+	printf("depois: %d, %d", a, b);
 }
-/*
-int	main()
-{
-	ft_putnbr(-7085);
-	return (0);
-}
-*/
