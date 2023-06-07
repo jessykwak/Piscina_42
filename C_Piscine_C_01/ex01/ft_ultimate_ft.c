@@ -6,11 +6,11 @@
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/05 12:08:16 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/06 12:44:17 by jmin-kwa         ###   ########.fr       */
+/*   Updated: 2023/06/07 15:51:23 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+// #include <stdio.h>
 
 void	ft_ultimate_ft(int *********nbr)
 {
