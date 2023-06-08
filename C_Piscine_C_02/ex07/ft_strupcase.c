@@ -1,41 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/08 10:37:26 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/08 12:39:40 by jmin-kwa         ###   ########.fr       */
+/*   Created: 2023/06/08 16:23:18 by jmin-kwa          #+#    #+#             */
+/*   Updated: 2023/06/08 16:41:20 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strupcase(char *str)
 {
-	int	count;
+	char	aux;
 
-	count = 0;
-	while (src[count] != '\0')
+	while (*str)
 	{
-			dest[count] = src[count];
-			count++;
+		if (*str >= 97 && *str <= 122)
+		{
+			aux = str[count] - 32;
+			str[count] = aux;
+		}
+		str++;
 	}
-	if (src[count] == '\0')
-			dest[count] = '\0';
-	return (&*dest);
+	return (str);
 }
 
-/* int	main()
+int	main(void)
 {
-	char	src[] = "Changes, they might drive you half-insane\nBut it's killing you to stay the same";
-	char	dest[sizeof(src)] = {};
+	char	str[8] = "cAraca!";
 
-	printf("%s\n", src);
-	ft_strcpy(&*dest, &*src);
-	printf("%s\n", dest);
-
-	return (0);
+	ft_strupcase(&*str);
+	printf("%s", str);
 }
- */

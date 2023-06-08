@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_lowercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/08 10:37:26 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/08 12:39:40 by jmin-kwa         ###   ########.fr       */
+/*   Created: 2023/06/08 16:09:49 by jmin-kwa          #+#    #+#             */
+/*   Updated: 2023/06/08 16:10:58 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include <stdio.h>
 
-char	*ft_strcpy(char *dest, char *src)
+int	ft_str_is_alpha(char *str)
 {
-	int	count;
-
-	count = 0;
-	while (src[count] != '\0')
+	while (*str)
 	{
-			dest[count] = src[count];
-			count++;
+		if (*str < 97 || *str > 122)
+		{
+			return (0);
+		}
+		str++;
 	}
-	if (src[count] == '\0')
-			dest[count] = '\0';
-	return (&*dest);
+	return (1);
+	if (*str == '\0')
+		return (1);
 }
 
-/* int	main()
+int	main(void)
 {
-	char	src[] = "Changes, they might drive you half-insane\nBut it's killing you to stay the same";
-	char	dest[sizeof(src)] = {};
+	int	a;
+	char	str[6] = "hell2o";
 
-	printf("%s\n", src);
-	ft_strcpy(&*dest, &*src);
-	printf("%s\n", dest);
-
-	return (0);
+	a = ft_str_is_alpha(&*str);
+	printf("%d", a);
 }
- */
