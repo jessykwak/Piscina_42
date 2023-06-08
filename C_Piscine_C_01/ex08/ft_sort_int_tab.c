@@ -6,7 +6,7 @@
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 13:07:18 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/07 20:06:15 by jmin-kwa         ###   ########.fr       */
+/*   Updated: 2023/06/08 10:31:52 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_sort_int_tab(int *tab, int size)
 	int	fir;
 
 	fir = 0;
-	while (fir < size)
+	while (fir < size - 1)
 	{
 		if (tab[fir] > tab[fir + 1])
 		{
@@ -41,7 +41,7 @@ int	main(void)
 	i = 0;
 	while (i < size)
 	{
-		printf("[%d]", list[1]);
+		printf("[%d]", list[i]);
 		i++;
 	}
 	ft_sort_int_tab(&*list, size);
