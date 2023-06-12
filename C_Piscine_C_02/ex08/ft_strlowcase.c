@@ -6,7 +6,7 @@
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 17:48:51 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/12 15:05:23 by jmin-kwa         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:12:07 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,8 @@ char	*ft_strlowcase(char *str)
 
 /* int	main(void)
 {
-	char	str[8];
+	char	str[8] = "ROI";
 
-	str[8] = "ROI";
 	ft_strlowcase(&*str);
 	printf("%s", str);
-}
- */
+} */

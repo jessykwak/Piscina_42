@@ -6,7 +6,7 @@
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 16:09:49 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/12 15:39:26 by jmin-kwa         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:09:56 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,8 @@ int	ft_str_is_alpha(char *str)
 /* int	main(void)
 {
 	int		a;
-	char	str[6];
+	char	str[7] = "hell2o";
 
-	str[6] = "hell2o";
-	a = ft_str_is_alpha(&*str);
+    a = ft_str_is_alpha(&*str);
 	printf("%d", a);
-}
- */
+} */

@@ -6,15 +6,15 @@
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 11:32:03 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/12 15:39:39 by jmin-kwa         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:04:42 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include	<stdio.h>
+// #include <stdio.h>
 
 char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	size_t	count;
+	unsigned int	count;
 
 	count = 0;
 	while (count < n && src[count] != '\0')
@@ -32,15 +32,13 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 
 /* int	main(void)
 {
-	char			src[];
+	char			src[] = "crap";
 	unsigned int	n;
-	char			dest[n];
+	char			dest[50];
 
-	src[] = "crap";
 	n = 8;
 	printf("%s\n", src);
 	ft_strncpy(&*dest, &*src, n);
 	printf("%s\n", dest);
 	return (0);
-}
- */
+} */

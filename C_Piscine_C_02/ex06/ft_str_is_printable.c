@@ -6,13 +6,13 @@
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 16:13:16 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/12 15:05:05 by jmin-kwa         ###   ########.fr       */
+/*   Updated: 2023/06/12 18:10:48 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
 
-int	ft_str_is_alpha(char *str)
+int	ft_str_is_printable(char *str)
 {
 	while (*str)
 	{
@@ -30,9 +30,8 @@ int	ft_str_is_alpha(char *str)
 /* int	main(void)
 {
 	int		a;
-	char	str[8];
+	char	str[8] = "cara\nca";
 
-	str[8] = "caraca";
-	a = ft_str_is_alpha(&*str);
+	a = ft_str_is_printable(&*str);
 	printf("%d", a);
 } */
