@@ -6,11 +6,11 @@
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 17:48:51 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/08 19:17:37 by jmin-kwa         ###   ########.fr       */
+/*   Updated: 2023/06/12 15:05:23 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+// #include <stdio.h>
 
 char	*ft_strlowcase(char *str)
 {
@@ -28,10 +28,12 @@ char	*ft_strlowcase(char *str)
 	return (str);
 }
 
-int	main(void)
+/* int	main(void)
 {
-	char	str[8] = "ROI";
+	char	str[8];
 
+	str[8] = "ROI";
 	ft_strlowcase(&*str);
 	printf("%s", str);
 }
+ */
