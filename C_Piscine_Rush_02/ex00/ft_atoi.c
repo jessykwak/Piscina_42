@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/08 12:39:44 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/10 13:00:03 by jmin-kwa         ###   ########.fr       */
+/*   Created: 2023/06/11 21:02:35 by jmin-kwa          #+#    #+#             */
+/*   Updated: 2023/06/11 21:04:02 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-
-int	ft_str_is_alpha(char *str)
+unsigned int	ft_atoi(char *str)
 {
-	while (*str)
+	unsigned int	i;
+	unsigned int	nb;
+
+	i = 0;
+	nb = 0;
+	while (str[i])
 	{
-		if ((*str < 97 || *str > 122) && (*str < 65 || *str > 90))
-		{
-			return (0);
-		}
-		str++;
+		nb = (nb * 10) + (str[i] - '0');
+		i++;
 	}
-	return (1);
-	if (*str == '\0')
-		return (1);
+	return (nb);
 }
 
-int	main(void)
+/* int main(void)
 {
-	int	a;
-	char	str[6] = "";
-
-	a = ft_str_is_alpha(&*str);
-	printf("%d", a);
-}
+	printf("%d", ft_atoi("123"));
+} */

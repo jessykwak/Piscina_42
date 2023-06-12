@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_alpha.c                                  :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/08 12:39:44 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/10 13:00:03 by jmin-kwa         ###   ########.fr       */
+/*   Created: 2023/06/10 14:36:55 by jmin-kwa          #+#    #+#             */
+/*   Updated: 2023/06/11 21:03:37 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include <fcntl.h>
+#include <unistd.h>
 
-int	ft_str_is_alpha(char *str)
+void	number_logic(char *input);
+char	*ft_return_valid_str(char *argv);
+
+int	main(int argc, char **argv)
 {
-	while (*str)
+	char	*nb;
+
+	if (argc < 2 && argc > 3)
 	{
-		if ((*str < 97 || *str > 122) && (*str < 65 || *str > 90))
+		write(1, "ERROR\n", 6);
+		return (0);
+	}
+	else if (argc == 2)
+	{
+		nb = ft_return_valid_str(argv[1]);
+		if (!(nb))
 		{
+			write(1, "ERROR\n", 6);
 			return (0);
 		}
-		str++;
+		else
+		{
+			number_logic(nb);
+		}
 	}
-	return (1);
-	if (*str == '\0')
-		return (1);
-}
-
-int	main(void)
-{
-	int	a;
-	char	str[6] = "";
-
-	a = ft_str_is_alpha(&*str);
-	printf("%d", a);
 }
