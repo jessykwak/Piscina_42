@@ -1,44 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/08 11:32:03 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/13 12:18:29 by jmin-kwa         ###   ########.fr       */
+/*   Created: 2023/06/13 18:54:50 by jmin-kwa          #+#    #+#             */
+/*   Updated: 2023/06/13 20:41:59 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include <stdio.h> */
-
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+char	*ft_strstr(char *str, char *to_find)
 {
-	unsigned int	count;
+	int	count;
+	int	count2;
 
 	count = 0;
-	while (count < n && src[count] != '\0')
+	count2 = 0;
+	if (to_find[0] == '\0')
+		return (str);
+	while (str[count] != '\0')
 	{
-		dest[count] = src[count];
+		while ((str[count] - to_find[count2]) == 0)
+		{
+			count2++;
+			count++;
+			if (to_find[count2] == '\0')
+				return (&str[count - count2]);
+		}
 		count++;
 	}
-	while (count < n)
-	{
-		dest[count] = '\0';
-		count++;
-	}
-	return (dest);
+	return (0);
 }
 
-/* int	main(void)
-{
-	char			src[] = "aaaaaaaaaaaa";
-	unsigned int	n;
-	char			dest[50] = "bbbbbbbbbbbbbbbbbbbbbbbb";
+#include <stdio.h>
 
-	n = 5;
-	printf("%s\n", src);
-	ft_strncpy(&*dest, &*src, n);
-	printf("%s\n", dest);
+int	main(void)
+{
+	char str[] = "banana melancia e abacaxi";
+	char to_find[] = "k";
+
+	printf("%s", ft_strstr(str, to_find));
 	return (0);
-} */
+}

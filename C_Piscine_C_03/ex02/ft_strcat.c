@@ -1,37 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/08 17:48:51 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/13 12:18:40 by jmin-kwa         ###   ########.fr       */
+/*   Created: 2023/06/13 15:11:39 by jmin-kwa          #+#    #+#             */
+/*   Updated: 2023/06/13 18:55:05 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/* #include <stdio.h> */
-
-char	*ft_strlowcase(char *str)
+char	*ft_strcat(char *dest, char *src)
 {
 	int	index;
+	int	count;
 
 	index = 0;
-	while (str[index] != '\0')
+	while (dest[index] != '\0')
 	{
-		if (str[index] >= 65 && str[index] <= 90)
-		{
-			str[index] += 32;
-		}
 		index++;
 	}
-	return (str);
+	count = 0;
+	while (src[count] != '\0')
+	{
+		dest[index + count] = src[count];
+		count++;
+	}
+	dest[index + count] = '\0';
+	return (dest);
 }
 
-/* int	main(void)
-{
-	char	str[] = "ASJDAJK ASIJD";
+#include <stdio.h>
 
-	ft_strlowcase(str);
-	printf("%s", str);
-} */
+int	main()
+{
+	char str1[] = "aaaa";
+	char str2[] = "bbbb";
+
+	ft_strcat(str1, str2);
+	printf("%s", str1);
+	return (0);
+}

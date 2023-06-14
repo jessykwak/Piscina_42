@@ -6,7 +6,7 @@
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 16:11:39 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/12 18:09:54 by jmin-kwa         ###   ########.fr       */
+/*   Updated: 2023/06/13 12:18:37 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,6 @@ int	ft_str_is_uppercase(char *str)
 		str++;
 	}
 	return (1);
-	if (*str == '\0')
-		return (1);
 }
 
 /* int	main(void)

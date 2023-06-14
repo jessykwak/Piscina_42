@@ -1,58 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/12 15:47:12 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/13 15:07:01 by jmin-kwa         ###   ########.fr       */
+/*   Created: 2023/06/13 12:34:18 by jmin-kwa          #+#    #+#             */
+/*   Updated: 2023/06/13 18:08:45 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <string.h>
 
-int	ft_strcmp(char *s1, char *s2)
+int ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int	index;
-	int	dif;
+	unsigned int	index;
 
 	index = 0;
-	while (s1[index] != '\0' && s2[index] != '\0')
+	while (s1[index] != '\0' && s2[index] != '\0' && index < n)
 	{
-		dif = s1[index] - s2[index];
-		if (dif < 0)
+		if (s1[index] != s2[index])
 		{
-			return (dif);
-		}
-		else if (dif > 0)
-		{
-			return (dif);
+			return (s1[index]-s2[index]);
 		}
 		index++;
 	}
-	return (dif);
+	if (index != n)
+		return (s1[index]-s2[index]);
+	return (0);
 }
 
 int	main(void)
 {
-	char *str1;
-	char *str2;
-	char *str3;
-	char *str4;
+
 	int n;
 
-	str1 = "gotta catch 'em all!";
-	str2 = "GO! PIKACHU!";
-	str3 = "Go! PIKACHU!";
-	str4 = "GO! PIKACHU!";
-	n = ft_strcmp(str1, str2);
+	n = ft_strncmp("aliSson", "alisson", 4);
 	printf("%d\n", n);
-	n = ft_strcmp(str2, str1);
+	n = strncmp("aliSson", "alisson", 4);
 	printf("%d\n", n);
-	n = ft_strcmp(str3, str2);
+	n = ft_strncmp("aliSson", "alisson", 3);
 	printf("%d\n", n);
-	n = ft_strcmp(str4, str2);
+	n = strncmp("aliSson", "alisson", 3);
 	printf("%d\n", n);
+
 	return (0);
 }

@@ -6,31 +6,31 @@
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 16:23:18 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/12 18:11:23 by jmin-kwa         ###   ########.fr       */
+/*   Updated: 2023/06/13 12:18:39 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
+/* #include <stdio.h> */
 
 char	*ft_strupcase(char *str)
 {
-	char	aux;
+	int	index;
 
-	while (*str)
+	index = 0;
+	while (str[index] != '\0')
 	{
-		if (*str >= 97 && *str <= 122)
+		if (str[index] >= 97 && str[index] <= 122)
 		{
-			aux = *str - 32;
-			*str = aux;
+			str[index] -= 32;
 		}
-		str++;
+		index++;
 	}
 	return (str);
 }
 
 /* int	main(void)
 {
-	char	str[8] = "cAraca!";
+	char	str[] = "ajksdkland aoisjd";
 
 	ft_strupcase(&*str);
 	printf("%s", str);
