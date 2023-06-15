@@ -1,44 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 18:54:50 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/14 18:57:34 by jmin-kwa         ###   ########.fr       */
+/*   Created: 2023/06/14 13:14:04 by jmin-kwa          #+#    #+#             */
+/*   Updated: 2023/06/14 20:10:49 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strstr(char *str, char *to_find)
+// #include <stdio.h>
+
+int	ft_strlen(char *str)
 {
-	int	c;
 	int	i;
 
-	c = 0;
-	if (to_find[0] == '\0')
-		return (str);
-	while (str[c] != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		i = 0;
-		while (str[c + i] != '\0' && str[c + i] == to_find[i])
-		{
-			if (to_find[i + 1] == '\0')
-				return (&str[c]);
-			i++;
-		}
-		c++;
+		i++;
 	}
-	return (0);
+	return (i);
 }
 
-/* #include <stdio.h>
-
-int	main(void)
+/* int	main(void)
 {
-	char str[] = "banana melancia e abacaxi";
-	char to_find[] = "ana";
+	int	len;
 
-	printf("%s", ft_strstr(str, to_find));
+	len = ft_strlen("");
+	printf("The string has %d characters.", len);
 	return (0);
-} */
+}
+ */

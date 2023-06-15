@@ -1,43 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 15:11:39 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/13 21:39:07 by jmin-kwa         ###   ########.fr       */
+/*   Created: 2023/06/14 13:15:39 by jmin-kwa          #+#    #+#             */
+/*   Updated: 2023/06/14 20:10:42 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *dest, char *src)
-{
-	int	index;
-	int	count;
+#include <unistd.h>
 
-	index = 0;
-	while (dest[index] != '\0')
+void	ft_putstr(char *str)
+{
+	while (*str)
 	{
-		index++;
+		write(1, &*str, 1);
+		str++;
 	}
-	count = 0;
-	while (src[count] != '\0')
-	{
-		dest[index + count] = src[count];
-		count++;
-	}
-	dest[index + count] = '\0';
-	return (dest);
 }
 
-/* #include <stdio.h>
-
-int	main(void)
+/* int	main(void)
 {
-	char str1[] = "aaaa";
-	char str2[] = "bbbb";
-
-	ft_strcat(str1, str2);
-	printf("%s", str1);
+	ft_putstr("Can you see my brain open wide now?");
 	return (0);
-} */
+}
+*/

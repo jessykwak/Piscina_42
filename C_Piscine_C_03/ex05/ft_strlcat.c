@@ -5,12 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/13 20:46:11 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/06/13 21:35:44 by jmin-kwa         ###   ########.fr       */
+/*   Created: 2023/06/14 11:34:01 by jmin-kwa          #+#    #+#             */
+/*   Updated: 2023/06/14 19:36:28 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-// ??????????????????????????????????????
 
 int	ft_strlen(char *str)
 {
@@ -27,35 +25,30 @@ int	ft_strlen(char *str)
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
-	unsigned int	count;
+	unsigned int	lendest;
 	unsigned int	index;
 
-	count = 0;
-	while (dest[count] != '\0')
-	{
-		count++;
-	}
+	lendest = ft_strlen(dest);
 	index = 0;
-	if (size < ft_strlen(dest))
+	if (size <= lendest)
+		return (size + ft_strlen(src));
+	while (src[index] && ((lendest + index) < (size - 1)))
 	{
-		while (index < (size - 1) && src[index] != '\0')
-		{
-			dest[index] = src[index];
-			index++;
-		}
-		dest[index] = '\0';
-		return (count + size)
+		dest[lendest + index] = src[index];
+		index++;
 	}
-	index = 0;
-	else if (size > ft_strlen(dest))
-	{
-		while (index < (size - 1) && src[index] != '\0')
-		{
-			dest[index] = src[index];
-			index++;
-		}
-		return (count + index)
-	}
-	
-	return (count + index);
+	dest[lendest + index] = '\0';
+	return (ft_strlen(dest));
+}
+
+#include <stdio.h>
+
+int	main(void)
+{
+	char dest[16] = "to com fome";
+	char src[13] = " quero leite";
+
+	printf("%i", ft_strlcat(dest, src, 10));
+	printf("\n%s", dest);
+	return (0);
 }
