@@ -31,7 +31,6 @@ void	ft_putnbr(int nb)
 	{
 		ft_putnbr(nbr / 10);
 		ft_putchar(nbr % 10 + 48);
-		nbr = nbr / 10;
 	}
 	else
 	{
@@ -45,10 +44,14 @@ int	main(void)
 	ft_putchar('\n');
 	ft_putnbr(-2147483648);
 	ft_putchar('\n');
-	ft_putnbr(360);
+	ft_putnbr(-1);
 	ft_putchar('\n');
-	ft_putnbr(2147483647);
+	ft_putnbr(21474);
 	ft_putchar('\n');
 	ft_putnbr(-5041);
+	ft_putchar('\n');
+	ft_putnbr(0);
+	ft_putchar('\n');
+	ft_putnbr(192);
 	ft_putchar('\n');
 }
